@@ -18,7 +18,10 @@ REQUIRED = []
 # Extension("module", ["module.pyx", "helper.cpp"], language='c++',)
 #
 EXTENSIONS = [
-    Extension('demo_module', sources=['cython_hints/demo_module.pyx'],),
+    Extension(
+        'demo_module',
+        sources=['cython_hints/demo_module.pyx'], language='c++'
+    ),
 ]
 
 setuptools.setup(
