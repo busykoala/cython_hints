@@ -13,15 +13,18 @@ DESCRIPTION = 'Demonstrate Cython'
 URL = 'https://github.com/busykoala/cython_hints'
 REQUIRED = []
 
-# Cython extensions:
-# ------------------
-# Extension("module", ["module.pyx", "helper.cpp"], language='c++',)
-#
 EXTENSIONS = [
     Extension(
-        'demo_module',
-        sources=['cython_hints/demo_module.pyx'], language='c++'
+        'demo_cython',
+        sources=['cython_hints/demo_cython.pyx'], language='c++'
     ),
+    Extension(
+        'demo_cpp', ['cython_hints/demo_cpp.pyx',
+                     'cython_hints/cpp_src/cppfib.cpp'],
+        language='c++'),
+    Extension(
+        'demo_c', ['cython_hints/demo_c.pyx', 'cython_hints/c_src/cfib.c'],
+        language='c'),
 ]
 
 setuptools.setup(
