@@ -4,11 +4,20 @@ This package demonstrates some usefull cases how to use cython.
 
 ## Where to find what
 
-In `demo_module` I do stuff with converting python code to C and using
-standard library functions.
+In `demo_cython.pyx` there are examples for:
 
-In `demo_module_two` I use functions from own C code beeing shipped with
-the package. Also CPP could be used here.
+- common function (cython "precompiled")
+- type safe function (cython "precompiled")
+- use c function from std lib
+- use cpp function from std lib
+- both python an c function (great for recursion)
+- a "c compiled" function given a python wrapper.
+
+In `demo_c.pyx` there is an example for external c code used
+within python.
+
+In `demo_cpp.pyx` there is an example for external cpp code
+used within python. 
 
 ## Cool resources
 
