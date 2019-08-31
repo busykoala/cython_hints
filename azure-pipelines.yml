@@ -5,8 +5,6 @@ pool:
   vmImage: 'ubuntu-latest'
 strategy:
   matrix:
-    Python35:
-      python.version: '3.5'
     Python36:
       python.version: '3.6'
     Python37:
@@ -20,7 +18,7 @@ steps:
 
 - script: |
     python -m pip install --upgrade pip
-    pip install -e .[test]
+    pip install -e '.[test]'
   displayName: 'Install dependencies'
 
 - script: |

@@ -23,3 +23,27 @@ used within python.
 
 Quite a bit explained how stuff works in cython this resource is also
 very much readable: [Okigiveup](http://okigiveup.net/an-introduction-to-cython/)
+
+## Installation
+
+```
+git clone git@github.com:busykoala/cython_hints.git
+cd cython_hints
+python3 -m venv .
+source ./bin/activate
+pip install -e .
+```
+
+## Run
+
+```
+show_magic
+```
+
+## Testing
+
+```
+source ./bin/activate
+pip install -e ".[test]"
+python -m pytest
+```

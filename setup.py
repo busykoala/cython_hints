@@ -27,6 +27,11 @@ EXTENSIONS = [
         language='c'),
 ]
 
+TEST_REQUIRE = [
+    'pytest',
+    'pytest-azurepipelines',
+]
+
 setuptools.setup(
     name=NAME,
     version=VERSION,
@@ -41,9 +46,14 @@ setuptools.setup(
         'setuptools>=18.0',
         'cython',
     ],
+    extras_require={
+        'test': TEST_REQUIRE,
+    },
     ext_modules=EXTENSIONS,
     classifiers=[
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
         "License :: OSI Approved :: GPLv3",
         "Operating System :: OS Independent",
     ],
