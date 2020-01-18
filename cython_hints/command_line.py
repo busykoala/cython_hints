@@ -1,11 +1,11 @@
-from demo_cython import common_function
-from demo_cython import type_safe_function
-from demo_cython import use_c_function
-from demo_cython import use_cpp_function
-from demo_cython import fib_cdef
-from demo_cython import fib_cpdef
-from demo_cpp import ext_cpp_fib
-from demo_c import ext_c_fib
+from cython_hints.demo_cython import common_function
+from cython_hints.demo_cython import type_safe_function
+from cython_hints.demo_cython import use_c_function
+from cython_hints.demo_cython import use_cpp_function
+from cython_hints.demo_cython import fib_cdef
+from cython_hints.demo_cython import fib_cpdef
+from cython_hints.demo_cpp import ext_cpp_fib
+from cython_hints.demo_c import ext_c_fib
 
 
 def main():

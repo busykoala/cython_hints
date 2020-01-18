@@ -15,16 +15,20 @@ REQUIRED = []
 
 EXTENSIONS = [
     Extension(
-        'demo_cython',
-        sources=['cython_hints/demo_cython.pyx'], language='c++'
+        'cython_hints.demo_cython',
+        sources=['cython_hints/demo_cython.pyx'],
+        language='c++'
     ),
     Extension(
-        'demo_cpp', ['cython_hints/demo_cpp.pyx',
-                     'cython_hints/cpp_src/cppfib.cpp'],
-        language='c++'),
+        'cython_hints.demo_cpp',
+        sources=['cython_hints/demo_cpp.pyx', 'cython_hints/cpp_src/cppfib.cpp'],
+        language='c++'
+    ),
     Extension(
-        'demo_c', ['cython_hints/demo_c.pyx', 'cython_hints/c_src/cfib.c'],
-        language='c'),
+        'cython_hints.demo_c',
+        sources=['cython_hints/demo_c.pyx', 'cython_hints/c_src/cfib.c'],
+        language='c'
+    ),
 ]
 
 TEST_REQUIRE = [
