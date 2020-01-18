@@ -10,7 +10,7 @@ VERSION = '0.0.1'
 AUTHOR = 'Busykoala'
 EMAIL = 'info@busykoala.ch'
 DESCRIPTION = 'Demonstrate Cython'
-URL = 'https://github.com/busykoala/cython_hints'
+URL = 'https://git.sr.ht/~busykoala/cython_hints'
 REQUIRED = []
 
 EXTENSIONS = [
@@ -29,7 +29,6 @@ EXTENSIONS = [
 
 TEST_REQUIRE = [
     'pytest',
-    'pytest-azurepipelines',
 ]
 
 setuptools.setup(
@@ -52,8 +51,8 @@ setuptools.setup(
     ext_modules=EXTENSIONS,
     classifiers=[
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: GPLv3",
         "Operating System :: OS Independent",
     ],

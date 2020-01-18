@@ -1,0 +1,42 @@
+image: archlinux
+tasks:
+    - setup-pyenv: |
+        git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+    - install-py37: |
+        export PYENV_ROOT="$HOME/.pyenv"
+        export PATH="$PYENV_ROOT/bin:$PATH"
+        eval "$(pyenv init -)"
+        pyenv install 3.7.6
+    - install-py38: |
+        export PYENV_ROOT="$HOME/.pyenv"
+        export PATH="$PYENV_ROOT/bin:$PATH"
+        eval "$(pyenv init -)"
+        pyenv install 3.8.1
+    - setup-py37: |
+        export PYENV_ROOT="$HOME/.pyenv"
+        export PATH="$PYENV_ROOT/bin:$PATH"
+        eval "$(pyenv init -)"
+        cd cython_hints
+        pyenv shell 3.7.6
+        python -m venv venv37
+        source ./venv37/bin/activate
+        python -m pip install --upgrade pip
+        pip install -e '.[test]'
+    - setup-py38: |
+        export PYENV_ROOT="$HOME/.pyenv"
+        export PATH="$PYENV_ROOT/bin:$PATH"
+        eval "$(pyenv init -)"
+        cd cython_hints
+        pyenv shell 3.8.1
+        python -m venv venv38
+        source ./venv38/bin/activate
+        python -m pip install --upgrade pip
+        pip install -e '.[test]'
+    - test-py37: |
+        cd cython_hints
+        source ./venv37/bin/activate
+        pytest
+    - test-py38: |
+        cd cython_hints
+        source ./venv38/bin/activate
+        pytest

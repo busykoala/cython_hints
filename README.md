@@ -27,7 +27,7 @@ very much readable: [Okigiveup](http://okigiveup.net/an-introduction-to-cython/)
 ## Installation
 
 ```
-git clone git@github.com:busykoala/cython_hints.git
+git clone git@git.sr.ht:~busykoala/cython_hints
 cd cython_hints
 python3 -m venv .
 source ./bin/activate
