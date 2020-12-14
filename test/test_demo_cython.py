@@ -1,5 +1,5 @@
-from cython_hints.demo_cython import common_function
-from cython_hints.demo_cython import type_safe_function
+from cython_hints.demo_cython import cython_fib
+from cython_hints.demo_cython import cython_fib_typed
 from cython_hints.demo_cython import use_c_function
 from cython_hints.demo_cython import use_cpp_function
 from cython_hints.demo_cython import fib_cdef
@@ -8,12 +8,12 @@ from cython_hints.demo_cpp import ext_cpp_fib
 from cython_hints.demo_c import ext_c_fib
 
 
-def test_common_function():
-    assert common_function(1, 3) == 4
+def test_cython_fib():
+    assert cython_fib(30) == 832040
 
 
-def test_type_safe_function():
-    assert type_safe_function(1, 3) == 4
+def test_cython_fib_typed():
+    assert cython_fib_typed(30) == 832040
 
 
 def test_use_c_function():
@@ -21,7 +21,7 @@ def test_use_c_function():
 
 
 def test_use_cpp_function():
-    assert use_cpp_function() == b'hello world'
+    assert use_cpp_function(b'hello world') == [b'hello', b'world']
 
 
 def test_fib_cdef():

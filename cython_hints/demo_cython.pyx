@@ -1,17 +1,26 @@
 from libc.math cimport sin as csin
 from libcpp.string cimport string as cpp_string
+from libcpp.vector cimport vector as cpp_vector
+from typing import ByteString
+from typing import List
 
 
-def common_function(a, b):
-    """This is pretty slow because not type safe.
+def cython_fib(n):
+    """This function is precompiled but still pretty slow.
     """
-    return a + b
+    if n <= 1:
+        return n
+    else:
+        return cython_fib(n - 1) + cython_fib(n - 2)
 
 
-def type_safe_function(int a, int b) -> int:
-    """This can accelerate a little.
+def cython_fib_typed(n: int) -> int:
+    """This function is precompiled and because it's typed it should be a bit faster.
     """
-    return a + b
+    if n <= 1:
+        return n
+    else:
+        return cython_fib(n - 1) + cython_fib(n - 2)
 
 
 def use_c_function(double a) -> double:
@@ -20,12 +29,11 @@ def use_c_function(double a) -> double:
     return csin(a)
 
 
-def use_cpp_function():
+def use_cpp_function(py_bytes_obj: ByteString) -> List[ByteString]:
     """This function demonstrates the use of a C++ standard library function.
     """
-    py_bytes_object = b'hello world'
-    cdef cpp_string example_string = py_bytes_object
-    return example_string
+    cdef cpp_vector[cpp_string] example_vector = py_bytes_obj.split()
+    return example_vector
 
 
 cpdef int fib_cpdef(int n):

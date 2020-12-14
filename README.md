@@ -10,7 +10,7 @@ In `demo_cython.pyx` there are examples for:
 - type safe function (cython "precompiled")
 - use c function from std lib
 - use cpp function from std lib
-- both python an c function (great for recursion)
+- both python and c function (great for a recursion)
 - a "c compiled" function given a python wrapper.
 
 In `demo_c.pyx` there is an example for external c code used
@@ -19,10 +19,22 @@ within python.
 In `demo_cpp.pyx` there is an example for external cpp code
 used within python. 
 
-## Cool resources
+## Example Benchmark
 
-Quite a bit explained how stuff works in cython this resource is also
-very much readable: [Okigiveup](http://okigiveup.net/an-introduction-to-cython/)
+This benchmark is not done in an isolated environment but shows a little
+how big the velocity improvement can be using cython.
+The output was generated running `show_magic` which will run each fibonacci
+implementation to get the 40th number.
+
+```bash
+Time Python: 51.1399
+Time Cython: 12.3765
+Time Cython Typed: 12.1667
+Time Cython hyprid Cpp: 0.3255
+Time Cython hybrid C: 0.3413
+Time Cython lib Cpp: 0.3378
+Time Cython lib C: 0.3464
+```
 
 ## Installation
 
